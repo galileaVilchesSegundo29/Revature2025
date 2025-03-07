@@ -61,11 +61,11 @@ public class LoanDao {
                 if(generatedKeysForId.next()){
                     // The columnIndex is 1 because that's the newly inserted ID
                     nwLoan.setId(generatedKeysForId.getInt(1));
-                    System.out.println("\nGreat! The new loan is created :)");
+                    //System.out.println("\nGreat! The new loan is created :)");
                 }
-                else{
-                    System.out.println("\nSorry, it was not created :(");
-                }
+//                else{
+//                    System.out.println("\nSorry, it was not created :(");
+//                }
             }catch (SQLException e){
                 e.printStackTrace();
             }
@@ -198,7 +198,7 @@ public class LoanDao {
                 ResultSet generatedKeysForId = connectStatement.getGeneratedKeys();
                 if(generatedKeysForId.next()) {
                     lnForChange.setLoanName(nwLoanName);
-                    System.out.println("\nThe loan name has changed :)");
+                    //System.out.println("\nThe loan name has changed :)");
                 }
             }catch (SQLException e){
                 e.printStackTrace();
@@ -230,7 +230,7 @@ public class LoanDao {
                 ResultSet generatedKeysForId = connectStatement.getGeneratedKeys();
                 if(generatedKeysForId.next()) {
                     lnForChange.setAmountRequested(nwLoanAmount);
-                    System.out.println("\nThe loan amount has changed :)");
+                    //System.out.println("\nThe loan amount has changed :)");
                 }
             }catch (SQLException e){
                 e.printStackTrace();
@@ -262,7 +262,7 @@ public class LoanDao {
                 ResultSet generatedKeysForId = connectStatement.getGeneratedKeys();
                 if(generatedKeysForId.next()) {
                     lnForChange.setLoanDate(nwLoanDate);
-                    System.out.println("\nThe loan date has changed :)");
+                    //System.out.println("\nThe loan date has changed :)");
                 }
             }catch (SQLException e){
                 e.printStackTrace();
@@ -294,7 +294,7 @@ public class LoanDao {
                 ResultSet generatedKeysForId = connectStatement.getGeneratedKeys();
                 if(generatedKeysForId.next()) {
                     lnForChange.setLoanType_id(nwLoanTypeID);
-                    System.out.println("\nThe loan type ID has changed :)");
+                    //System.out.println("\nThe loan type ID has changed :)");
                 }
             }catch (SQLException e){
                 e.printStackTrace();
@@ -326,7 +326,7 @@ public class LoanDao {
                 ResultSet generatedKeysForId = connectStatement.getGeneratedKeys();
                 if(generatedKeysForId.next()) {
                     lnForChange.setLoanStatus_id(nwLoanStatusID);
-                    System.out.println("\nThe loan status ID has changed :)");
+                    //System.out.println("\nThe loan status ID has changed :)");
                 }
             }catch (SQLException e){
                 e.printStackTrace();

@@ -64,11 +64,11 @@ public class UserDao {
                 if(generatedKeysForId.next()){
                     // The columnIndex is 1 because that's the newly inserted ID
                     nwUsr.setId(generatedKeysForId.getInt(1));
-                    System.out.println("\nGreat! The new user is created :)");
+                    //System.out.println("\nGreat! The new user is created :)");
                 }
-                else{
-                    System.out.println("\nSorry, it was not created :(");
-                }
+//                else{
+//                    System.out.println("\nSorry, it was not created :(");
+//                }
             }catch (SQLException e){
                 e.printStackTrace();
             }
@@ -172,7 +172,7 @@ public class UserDao {
                 ResultSet generatedKeysForId = connectStatement.getGeneratedKeys();
                 if(generatedKeysForId.next()) {
                     usrForChange.setUserRole_id(nwUserRole_Id);
-                    System.out.println("\nThe role has changed :)");
+                    //System.out.println("\nThe role has changed :)");
                 }
             }catch (SQLException e){
                 e.printStackTrace();
@@ -234,7 +234,7 @@ public class UserDao {
                 ResultSet generatedKeysForId = connectStatement.getGeneratedKeys();
                 if(generatedKeysForId.next()) {
                     usrForChange.setUserName(nwUserName);
-                    System.out.println("\nThe userName has changed :)");
+                    //System.out.println("\nThe userName has changed :)");
                 }
             }catch (SQLException e){
                 e.printStackTrace();
@@ -266,7 +266,7 @@ public class UserDao {
                 ResultSet generatedKeysForId = connectStatement.getGeneratedKeys();
                 if (generatedKeysForId.next()) {
                     usrForChange.setUName(nwUName);
-                    System.out.println("\nThe Name has changed :)");
+                    //System.out.println("\nThe Name has changed :)");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -298,7 +298,7 @@ public class UserDao {
                 ResultSet generatedKeysForId = connectStatement.getGeneratedKeys();
                 if (generatedKeysForId.next()) {
                     usrForChange.setUserPassword(nwUserPassword);
-                    System.out.println("\nThe Password has changed :)");
+                    //System.out.println("\nThe Password has changed :)");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -330,7 +330,7 @@ public class UserDao {
                 ResultSet generatedKeysForId = connectStatement.getGeneratedKeys();
                 if (generatedKeysForId.next()) {
                     usrForChange.setUMiddleName(nwUMiddleName);
-                    System.out.println("\nThe Middle Name has changed :)");
+                    //System.out.println("\nThe Middle Name has changed :)");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -362,7 +362,7 @@ public class UserDao {
                 ResultSet generatedKeysForId = connectStatement.getGeneratedKeys();
                 if (generatedKeysForId.next()) {
                     usrForChange.setULastName(nwULastName);
-                    System.out.println("\nThe Last Name has changed :)");
+                    //System.out.println("\nThe Last Name has changed :)");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -394,7 +394,7 @@ public class UserDao {
                 ResultSet generatedKeysForId = connectStatement.getGeneratedKeys();
                 if (generatedKeysForId.next()) {
                     usrForChange.setUserEmail(nwUserEmail);
-                    System.out.println("\nThe Email has changed :)");
+                    //System.out.println("\nThe Email has changed :)");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -426,7 +426,7 @@ public class UserDao {
                 ResultSet generatedKeysForId = connectStatement.getGeneratedKeys();
                 if (generatedKeysForId.next()) {
                     usrForChange.setIsLogged(nwIsLogged);
-                    System.out.println("\nThe Log value has changed to " +  usrForChange.getIsLogged() + ":)");
+                    //System.out.println("\nThe Log value has changed to " +  usrForChange.getIsLogged() + ":)");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();

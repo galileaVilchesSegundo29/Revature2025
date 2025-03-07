@@ -89,17 +89,6 @@ public class Main {
                 	('House loan', 1.0),
                 	('Student loan', 0.3);
                 
-                INSERT INTO users (username, userPassword, uname, uMiddleName, uLastName, userEmail, isLogged, userRole_id)
-                VALUES
-                	('tom99', 'Pass', 'Tom', 'Albert', 'Ramos', 'tom99@gmail.com', false, 1),
-                	('susy76', 'Word', 'Susan', ' ', 'Velez', 'susy76@gmail.com', false, 1),
-                	('eddie90', 'Password', 'Eduardo', ' ', 'Perez', 'eddie90@gmail.com', false, 2);
-                
-                INSERT INTO loans (user_id, loanName, amountRequested, dateLoan, loanStatus_id, loanType_id)
-                VALUES
-                    (1, 'firstTomLoan', 13000, '2025-01-01', 1, 3),
-                	(1, 'tom99_loan', 150.70, '2025-02-25', 1, 1),
-                	(3, 'firstEddieLoan', 13001, '2025-02-01', 1, 1);
     """;
 
     public static void main(String[] args) {
@@ -143,6 +132,7 @@ public class Main {
         app.put("/loans/{id}", lnController::uploadLoan);                   //Upload loan info (needs login)
         app.put("/loans/{id}/approved", lnController::approvedLoan);        //Approve a loan (needs login and manager role)
         app.put("/loans/{id}/rejected", lnController::rejectedLoan);        //Reject a loan (needs login and manager role)
+
 
     }
 
