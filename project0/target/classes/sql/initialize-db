@@ -1,0 +1,71 @@
+--Drop tables (if created)
+DROP TABLE IF EXISTS usersrole CASCADE;
+DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS loanstatus CASCADE;
+DROP TABLE IF EXISTS loantype CASCADE;
+DROP TABLE IF EXISTS loans CASCADE;
+
+--Create tables
+--usersrole table
+CREATE TABLE usersrole(
+    id SERIAL PRIMARY KEY,
+    userRoleName varchar(100) NOT NULL
+);
+--loanstatus table
+CREATE TABLE loanstatus(
+    id SERIAL PRIMARY KEY,
+    loanStatus varchar(100) NOT NULL
+);
+--loantype table
+CREATE TABLE loantype(
+    id SERIAL PRIMARY KEY,
+    loanType varchar(100) NOT NULL,
+    timeRequested float NOT NULL
+);
+--users table
+CREATE TABLE users(
+    id SERIAL PRIMARY KEY,
+    userName varchar(100) NOT NULL UNIQUE,
+    userPassword varchar(100) NOT NULL,
+    uName varchar(100) NOT NULL,
+    uMiddleName varchar(100),
+    uLastName varchar(100) NOT NULL,
+    userEmail varchar(100) NOT NULL,
+    userRole_id int NOT NULL,
+    isLogged boolean NOT NULL,
+    FOREIGN KEY (userRole_id) REFERENCES usersrole(id)
+);
+--loans table
+CREATE TABLE loans(
+    id SERIAL PRIMARY KEY,
+    user_id int NOT NULL,
+    loanName varchar(100) NOT NULL UNIQUE,
+    amountRequested float NOT NULL,
+    dateLoan varchar(100) NOT NULL,
+    loanStatus_id int NOT NULL,
+    loanType_id int NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (loanStatus_id) REFERENCES loanstatus(id),
+    FOREIGN KEY (loanType_id) REFERENCES loantype(id)
+);
+
+--Insert data
+--Insert into usersrole
+INSERT INTO usersrole (userRoleName)
+VALUES
+    ('Manager'),
+    ('Normal');
+
+--Insert into loanstatus
+INSERT INTO loanstatus(loanStatus)
+VALUES
+    ('created'),
+    ('approved'),
+    ('rejected');
+
+--Insert into loantype
+INSERT INTO loantype(loanType, timeRequested)
+VALUES
+    ('Car loan', 0.6),
+    ('House loan', 1.0),
+    ('Student loan', 0.3);
